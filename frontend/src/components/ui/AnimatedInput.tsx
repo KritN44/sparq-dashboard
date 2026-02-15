@@ -16,7 +16,7 @@ export const AnimatedInput = forwardRef<HTMLInputElement, AnimatedInputProps>(
         borderRadius="xl"
         border="2px solid"
         borderColor={error ? 'red.500' : 'gray.200'}
-        _focus={{ borderColor: 'purple.500', shadow: 'outline' }}
+        _focus={{ borderColor: 'brand.500', shadow: 'outline' }}
         px={4}
         py={3}
         {...props}

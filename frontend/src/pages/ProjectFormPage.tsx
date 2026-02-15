@@ -120,7 +120,7 @@ export default function ProjectFormPage() {
               borderRadius="xl"
               border="2px solid"
               borderColor="gray.200"
-              _focus={{ borderColor: 'purple.500', shadow: 'outline' }}
+              _focus={{ borderColor: 'brand.500', shadow: 'outline' }}
             />
           </FormControl>
 

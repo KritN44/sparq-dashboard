@@ -15,7 +15,7 @@ export function ProtectedRoute({ children, allowedRoles }: ProtectedRouteProps) 
   if (isLoading) {
     return (
       <Center minH="100vh">
-        <Spinner size="xl" color="purple.500" thickness="4px" />
+        <Spinner size="xl" color="brand.500" thickness="4px" />
       </Center>
     );
   }

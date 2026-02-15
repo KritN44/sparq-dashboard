@@ -49,7 +49,7 @@ export default function ProfilePage() {
           <Avatar size="lg" name={user.full_name || user.email} />
           <Box>
             <Text fontWeight="bold" fontSize="lg">{user.full_name || user.email}</Text>
-            <Badge colorScheme="purple" textTransform="capitalize">{user.role}</Badge>
+            <Badge colorScheme="brand" textTransform="capitalize">{user.role}</Badge>
           </Box>
         </Flex>
 

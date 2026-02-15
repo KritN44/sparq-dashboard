@@ -15,3 +15,4 @@ class MetricsResponse(BaseModel):
     videos_generated: int
     videos_approved: int
     campaigns_completed: int
+    campaigns_by_region: List[RegionCount]

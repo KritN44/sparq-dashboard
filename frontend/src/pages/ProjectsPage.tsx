@@ -37,9 +37,9 @@ const statusColorMap: Record<string, string> = {
   'Client approved': 'green',
   'Client rejected': 'red',
   'Video production in progress': 'yellow',
-  'Video submitted for review': 'purple',
+  'Video submitted for review': 'blue',
   'Video approved': 'teal',
-  'Campaign signed up': 'pink',
+  'Campaign signed up': 'orange',
 };
 
 export default function ProjectsPage() {
@@ -124,7 +124,7 @@ export default function ProjectsPage() {
 
       <GlassCard>
         {isLoading ? (
-          <Center py={10}><Spinner size="xl" color="purple.500" /></Center>
+          <Center py={10}><Spinner size="xl" color="brand.500" /></Center>
         ) : (
           <>
             <Box overflowX="auto">

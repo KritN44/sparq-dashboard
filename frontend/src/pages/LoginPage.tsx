@@ -1,5 +1,5 @@
 import { useState, FormEvent } from 'react';
-import { Box, Flex, Heading, Text, VStack, useToast } from '@chakra-ui/react';
+import { Box, Flex, Text, VStack, useToast, Image } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { MeshBackground } from '../components/layout/MeshBackground';
@@ -41,13 +41,13 @@ export default function LoginPage() {
         <GlassCard maxW="md" w="full" p={8}>
           <VStack spacing={6} as="form" onSubmit={handleSubmit}>
             <Box textAlign="center">
-              <Heading
-                size="lg"
-                bgGradient="linear(to-r, purple.500, pink.500)"
-                bgClip="text"
-              >
-                Sparq Dashboard
-              </Heading>
+              <Image
+                src={new URL('../assets/SparQ.png', import.meta.url).href}
+                alt="SparQ"
+                h="72px"
+                mx="auto"
+                mb={2}
+              />
               <Text color="gray.500" mt={2}>
                 Sign in to your account
               </Text>

@@ -10,6 +10,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
+  Image,
 } from '@chakra-ui/react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { FiFolder, FiPlus, FiUser, FiLogOut, FiBarChart2 } from 'react-icons/fi';
@@ -31,8 +32,8 @@ function NavItem({ to, icon, label }: NavItemProps) {
       px={4}
       py={3}
       borderRadius="lg"
-      _hover={{ bg: 'purple.50', color: 'purple.600' }}
-      _activeLink={{ bg: 'purple.100', color: 'purple.700', fontWeight: 'semibold' }}
+      _hover={{ bg: 'brand.50', color: 'brand.600' }}
+      _activeLink={{ bg: 'brand.100', color: 'brand.700', fontWeight: 'semibold' }}
       transition="all 0.2s"
       display="flex"
       alignItems="center"
@@ -69,9 +70,7 @@ export function SidebarLayout({ children }: SidebarLayoutProps) {
         flexDirection="column"
       >
         <Box px={6} mb={8}>
-          <Text fontSize="xl" fontWeight="bold" bgGradient="linear(to-r, purple.500, pink.500)" bgClip="text">
-            Sparq Dashboard
-          </Text>
+          <Image src={new URL('../../assets/SparQ.png', import.meta.url).href} alt="SparQ" h="60px" />
         </Box>
 
         <VStack spacing={1} px={3} flex={1}>

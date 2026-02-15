@@ -31,7 +31,7 @@ export default function ProjectDetailPage() {
   if (isLoading) {
     return (
       <Center minH="50vh">
-        <Spinner size="xl" color="purple.500" />
+        <Spinner size="xl" color="brand.500" />
       </Center>
     );
   }
@@ -53,7 +53,7 @@ export default function ProjectDetailPage() {
           Back to Projects
         </Button>
         {user?.role === 'marcom' && (
-          <Button leftIcon={<FiEdit />} colorScheme="purple" variant="outline" onClick={() => navigate(`/projects/${id}/edit`)}>
+          <Button leftIcon={<FiEdit />} colorScheme="brand" variant="outline" onClick={() => navigate(`/projects/${id}/edit`)}>
             Edit
           </Button>
         )}
@@ -62,7 +62,7 @@ export default function ProjectDetailPage() {
       <GlassCard>
         <Heading size="md" mb={4}>{project.brand_name}</Heading>
         <Badge
-          colorScheme="purple"
+          colorScheme="brand"
           borderRadius="full"
           px={3}
           py={1}

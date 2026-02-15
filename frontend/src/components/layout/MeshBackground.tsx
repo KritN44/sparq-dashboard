@@ -6,7 +6,7 @@ export function MeshBackground() {
       <Box
         position="absolute"
         inset={0}
-        bgGradient="linear(to-br, purple.50, white, pink.50)"
+        bgGradient="linear(to-br, brand.50, white, accent.50)"
       />
       <Box
         position="absolute"
@@ -14,7 +14,7 @@ export function MeshBackground() {
         left="25%"
         w="24rem"
         h="24rem"
-        bg="purple.200"
+        bg="brand.200"
         borderRadius="full"
         filter="blur(80px)"
         opacity={0.3}
@@ -25,7 +25,7 @@ export function MeshBackground() {
         right="25%"
         w="24rem"
         h="24rem"
-        bg="pink.200"
+        bg="accent.200"
         borderRadius="full"
         filter="blur(80px)"
         opacity={0.3}

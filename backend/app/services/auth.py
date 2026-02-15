@@ -72,7 +72,11 @@ def refresh_tokens(db: Session, refresh_token: str) -> dict:
     if not db_token:
         raise UnauthorizedError("Refresh token not found or revoked")
 
-    if db_token.expires_at < datetime.now(timezone.utc):
+    now = datetime.now(timezone.utc)
+    expires = db_token.expires_at
+    if expires.tzinfo is None:
+        expires = expires.replace(tzinfo=timezone.utc)
+    if expires < now:
         raise UnauthorizedError("Refresh token expired")
 
     db_token.revoked = True

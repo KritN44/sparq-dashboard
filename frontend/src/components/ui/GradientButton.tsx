@@ -9,14 +9,14 @@ export function GradientButton({ children, ...props }: ButtonProps) {
     <MotionButton
       whileHover={{ scale: 1.02, y: -2 }}
       whileTap={{ scale: 0.98 }}
-      bgGradient="linear(to-r, purple.500, pink.500)"
+      bgGradient="linear(to-r, brand.600, brand.800)"
       color="white"
       fontWeight="semibold"
       borderRadius="full"
       px={6}
       py={3}
       _hover={{
-        bgGradient: 'linear(to-r, purple.600, pink.600)',
+        bgGradient: 'linear(to-r, brand.700, brand.900)',
         shadow: 'lg',
       }}
       {...props}

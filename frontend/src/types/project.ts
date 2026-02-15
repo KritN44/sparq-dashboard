@@ -66,6 +66,7 @@ export interface DashboardMetrics {
   videos_generated: number;
   videos_approved: number;
   campaigns_completed: number;
+  campaigns_by_region: RegionCount[];
 }
 
 export const REGIONS: Region[] = ['TN', 'Kerala', 'AP', 'Telangana', 'Gujarat', 'Delhi', 'Mumbai'];
