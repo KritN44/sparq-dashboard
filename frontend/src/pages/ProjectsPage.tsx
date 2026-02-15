@@ -132,6 +132,7 @@ export default function ProjectsPage() {
                 <Thead>
                   <Tr>
                     <Th>Region</Th>
+                    <Th>Request Date</Th>
                     <Th>City</Th>
                     <Th>Salesperson</Th>
                     <Th>Brand</Th>
@@ -144,6 +145,7 @@ export default function ProjectsPage() {
                   {data?.items.map((project) => (
                     <Tr key={project.id} _hover={{ bg: 'gray.50' }}>
                       <Td fontWeight="medium">{project.region}</Td>
+                      <Td>{new Date(project.request_date).toLocaleDateString()}</Td>
                       <Td>{project.city}</Td>
                       <Td>{project.salesperson_name}</Td>
                       <Td fontWeight="medium">{project.brand_name}</Td>

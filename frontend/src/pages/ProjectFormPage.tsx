@@ -1,5 +1,5 @@
 import { useState, useEffect, FormEvent } from 'react';
-import { Box, Heading, VStack, Select, useToast, Button, Flex } from '@chakra-ui/react';
+import { Box, Heading, VStack, Select, useToast, Button, Flex, FormControl, FormLabel, Input } from '@chakra-ui/react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import { FiArrowLeft } from 'react-icons/fi';
@@ -18,6 +18,10 @@ import {
   ProjectCreateData,
 } from '../types/project';
 
+function todayISO(): string {
+  return new Date().toISOString().split('T')[0];
+}
+
 export default function ProjectFormPage() {
   const { id } = useParams<{ id: string }>();
   const isEdit = !!id;
@@ -25,6 +29,7 @@ export default function ProjectFormPage() {
   const toast = useToast();
 
   const [region, setRegion] = useState<Region>('TN');
+  const [requestDate, setRequestDate] = useState(todayISO());
   const [city, setCity] = useState('');
   const [salespersonName, setSalespersonName] = useState('');
   const [brandName, setBrandName] = useState('');
@@ -41,6 +46,7 @@ export default function ProjectFormPage() {
   useEffect(() => {
     if (existingProject) {
       setRegion(existingProject.region);
+      setRequestDate(existingProject.request_date);
       setCity(existingProject.city);
       setSalespersonName(existingProject.salesperson_name);
       setBrandName(existingProject.brand_name);
@@ -55,6 +61,7 @@ export default function ProjectFormPage() {
 
     const projectData: ProjectCreateData = {
       region,
+      request_date: requestDate,
       city,
       salesperson_name: salespersonName,
       brand_name: brandName,
@@ -103,6 +110,19 @@ export default function ProjectFormPage() {
               ))}
             </Select>
           </Box>
+
+          <FormControl isRequired>
+            <FormLabel fontSize="sm" fontWeight="medium">Request Date</FormLabel>
+            <Input
+              type="date"
+              value={requestDate}
+              onChange={(e) => setRequestDate(e.target.value)}
+              borderRadius="xl"
+              border="2px solid"
+              borderColor="gray.200"
+              _focus={{ borderColor: 'purple.500', shadow: 'outline' }}
+            />
+          </FormControl>
 
           <AnimatedInput
             label="City"

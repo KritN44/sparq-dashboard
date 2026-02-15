@@ -57,6 +57,7 @@ def create_project(db: Session, data: ProjectCreate, user: User) -> Project:
     project = Project(
         user_id=user.id,
         region=data.region,
+        request_date=data.request_date,
         city=data.city,
         salesperson_name=data.salesperson_name,
         brand_name=data.brand_name,
@@ -102,12 +103,13 @@ def export_projects_csv(db: Session) -> str:
     output = io.StringIO()
     writer = csv.writer(output)
     writer.writerow([
-        "ID", "Region", "City", "Salesperson", "Brand", "Category", "Status", "Created At"
+        "ID", "Region", "Request Date", "City", "Salesperson", "Brand",
+        "Category", "Status", "Created At",
     ])
     for p in projects:
         writer.writerow([
-            p.id, p.region.value, p.city, p.salesperson_name,
-            p.brand_name, p.category.value, p.status.value,
-            p.created_at.isoformat() if p.created_at else "",
+            p.id, p.region.value, p.request_date.isoformat() if p.request_date else "",
+            p.city, p.salesperson_name, p.brand_name, p.category.value,
+            p.status.value, p.created_at.isoformat() if p.created_at else "",
         ])
     return output.getvalue()

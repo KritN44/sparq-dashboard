@@ -17,6 +17,7 @@ export interface Project {
   id: number;
   user_id: number;
   region: Region;
+  request_date: string;
   city: string;
   salesperson_name: string;
   brand_name: string;
@@ -28,6 +29,7 @@ export interface Project {
 
 export interface ProjectCreateData {
   region: Region;
+  request_date: string;
   city: string;
   salesperson_name: string;
   brand_name: string;
@@ -37,6 +39,7 @@ export interface ProjectCreateData {
 
 export interface ProjectUpdateData {
   region?: Region;
+  request_date?: string;
   city?: string;
   salesperson_name?: string;
   brand_name?: string;

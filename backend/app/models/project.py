@@ -1,6 +1,6 @@
 import enum
 
-from sqlalchemy import Column, Integer, String, Enum, ForeignKey, Index
+from sqlalchemy import Column, Date, Integer, String, Enum, ForeignKey, Index
 from sqlalchemy.orm import relationship
 
 from app.database import Base
@@ -41,13 +41,20 @@ class Project(Base, TimestampMixin):
     user_id = Column(
         Integer, ForeignKey("users.id", ondelete="CASCADE"), nullable=False
     )
-    region = Column(Enum(Region), nullable=False)
+    region = Column(
+        Enum(Region, values_callable=lambda e: [m.value for m in e]),
+        nullable=False,
+    )
+    request_date = Column(Date, nullable=False)
     city = Column(String(100), nullable=False)
     salesperson_name = Column(String(150), nullable=False)
     brand_name = Column(String(200), nullable=False)
-    category = Column(Enum(Category), nullable=False)
+    category = Column(
+        Enum(Category, values_callable=lambda e: [m.value for m in e]),
+        nullable=False,
+    )
     status = Column(
-        Enum(ProjectStatus),
+        Enum(ProjectStatus, values_callable=lambda e: [m.value for m in e]),
         default=ProjectStatus.brand_description_generated,
         nullable=False,
     )

@@ -78,6 +78,10 @@ export default function ProjectDetailPage() {
             <Text fontWeight="medium">{project.region}</Text>
           </Box>
           <Box>
+            <Text fontSize="sm" color="gray.500" mb={1}>Request Date</Text>
+            <Text fontWeight="medium">{new Date(project.request_date).toLocaleDateString()}</Text>
+          </Box>
+          <Box>
             <Text fontSize="sm" color="gray.500" mb={1}>City</Text>
             <Text fontWeight="medium">{project.city}</Text>
           </Box>
