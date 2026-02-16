@@ -70,7 +70,7 @@ export function SidebarLayout({ children }: SidebarLayoutProps) {
         flexDirection="column"
       >
         <Box px={6} mb={8}>
-          <Image src={new URL('../../assets/SparQ.png', import.meta.url).href} alt="SparQ" h="60px" />
+          <Image src={new URL('../../assets/SparQ - Logo.png', import.meta.url).href} alt="SparQ" w="180px" />
         </Box>
 
         <VStack spacing={1} px={3} flex={1}>

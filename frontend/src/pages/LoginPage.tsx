@@ -42,9 +42,9 @@ export default function LoginPage() {
           <VStack spacing={6} as="form" onSubmit={handleSubmit}>
             <Box textAlign="center">
               <Image
-                src={new URL('../assets/SparQ.png', import.meta.url).href}
+                src={new URL('../assets/SparQ - Logo.png', import.meta.url).href}
                 alt="SparQ"
-                h="72px"
+                w="240px"
                 mx="auto"
                 mb={2}
               />
